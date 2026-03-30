@@ -5,49 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Visualizaciones - Infovis</title>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 40px; text-align: center; }
-        h1 { color: #2c3e50; }
-        .container { max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .viz-section { margin-bottom: 50px; padding: 20px; border-bottom: 1px solid #eee; }
-        h2 { color: #4A5BFF; } /* Color azul moderno como el que querías */
-        iframe { border: none; border-radius: 10px; width: 100%; height: 500px; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f4f7f6; 
+            color: #333; 
+            margin: 0; 
+            padding: 40px; 
+            text-align: center; 
+        }
+        h1 { 
+            color: #2c3e50; 
+        }
+        .container { 
+            max-width: 900px; 
+            margin: auto; 
+            background: white; 
+            padding: 20px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+        }
+        .viz-section { 
+            margin-bottom: 50px; 
+            padding: 20px; 
+            border-bottom: 1px solid #eee; 
+        }
+        h2 { 
+            color: #4A5BFF; 
+        }
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 10px; 
+        }
+        iframe { 
+            border: none; 
+            border-radius: 10px; 
+            width: 100%; 
+            height: 500px; 
+        }
     </style>
 </head>
 <body>
 
     <h1>Infovis</h1>
 
-
     <div class="container">
-        
-        <div class="viz-section">
-            <h2>1. Visualización Definiciones infovis</h2>
-            <div id="rawgraph-container">
-                <object type="image/svg+xml" data="./viz.svg"></object>
+
+        <!-- SECCIÓN 1: RawGraphs -->
+        <div class="viz-section" id="rawgraph">
+            <h2>1. Visualización de RawGraphs</h2>
+            <p>Este gráfico muestra la distribución de mi energía diaria según mis hábitos.</p>
+            <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+                <img src="./viz.svg" alt="Gráfico RawGraphs">
             </div>
         </div>
 
+        <!-- SECCIÓN 2: Flourish -->
         <div class="viz-section">
+            <h2>2. Make Over Monday 2020 - Semana 13</h2>
+            <p>Visualización interactiva usando Flourish.</p>
             <div class="flourish-embed flourish-chart" data-src="visualisation/27964207">
                 <script src="https://public.flourish.studio/resources/embed.js"></script>
                 <noscript>
                     <img src="https://public.flourish.studio/visualisation/27964207/thumbnail" width="100%" alt="visualization" />
                 </noscript>
             </div>
-            <h1>Make over monday 2020, semana 13</h1>
-            <iframe title="Pizza topping in UK (men and women choices)" aria-label="Range Plot" id="datawrapper-chart-1NIqq" src="https://datawrapper.dwcdn.net/1NIqq/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="449" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
         </div>
+
+        <!-- SECCIÓN 3: Datawrapper -->
+        <div class="viz-section">
+            <h2>3. Pizza Topping in UK</h2>
+            <p>Visualización interactiva usando Datawrapper.</p>
+            <iframe title="Pizza topping in UK (men and women choices)" aria-label="Range Plot" id="datawrapper-chart-1NIqq" src="https://datawrapper.dwcdn.net/1NIqq/1/" scrolling="no"></iframe>
+            <script type="text/javascript">
+                window.addEventListener("message", function(event) {
+                    if (event.data["datawrapper-height"]) {
+                        var iframes = document.querySelectorAll("iframe");
+                        for (var t in event.data["datawrapper-height"]) {
+                            for (var i = 0; i < iframes.length; i++) {
+                                if (iframes[i].contentWindow === event.source) {
+                                    iframes[i].style.height = event.data["datawrapper-height"][t] + "px";
+                                }
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+
         <hr style="margin: 50px 0; border: 0; border-top: 2px dashed #ccc;">
 
-<section id="grafico-energia">
-    <h2 style="color: #2c3e50;">¿Cómo influyen mis hábitos diarios en la distribución de mi energía vital?</h2>
-    <p>Para este prototipo, utilicé este grafico para procesar un registro de una semana de datos personales. Clasifiqué las actividades en categorías (Salud, Alimentación, Productivo, Ocio y Descanso).</p>
-    
-    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
-        <img src="energia-streamgraph.svg" alt="Streamgraph de Energía Diaria" style="max-width: 100%; height: auto;">
-    </div>
-
-</section>
+        <!-- SECCIÓN 4: Streamgraph Energía -->
+        <section id="grafico-energia" class="viz-section">
+            <h2 style="color: #2c3e50;">¿Cómo influyen mis hábitos diarios en la distribución de mi energía vital?</h2>
+            <p>Para este prototipo, utilicé este gráfico para procesar un registro de una semana de datos personales. Clasifiqué las actividades en categorías (Salud, Alimentación, Productivo, Ocio y Descanso).</p>
+            <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+                <img src="./energia-streamgraph.svg" alt="Streamgraph de Energía Diaria">
+            </div>
+        </section>
 
     </div>
 
