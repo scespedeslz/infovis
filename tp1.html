@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gráfico TP1</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 20px; /* Un poco de aire alrededor */
+            display: flex; 
+            flex-direction: column; /* Para que el texto y el gráfico se apilen */
+            justify-content: flex-start; 
+            align-items: center; 
+            min-height: 100vh;
+            font-family: sans-serif;
+            background-color: #f9f9f9; /* Color sutil de fondo */
+        }
+        
+        .card {
+            background: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h2 { color: #2c3e50; margin-top: 0; }
+        p { color: #555; line-height: 1.6; }
+
+        svg { 
+            width: 100%; 
+            height: auto; 
+            max-height: 500px; /* Para que no se deforme */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>¿Cómo influyen mis hábitos diarios en la distribución de mi energía vital?</h2>
+        <p>Para este prototipo, utilicé este gráfico para procesar un registro de una semana de datos personales. Clasifiqué las actividades en categorías (Salud, Alimentación, Productivo, Ocio y Descanso).</p>
+        
+        <svg viewBox="0 0 800 400">
+            </svg>
+    </div>
+
+</body>
+</html>
